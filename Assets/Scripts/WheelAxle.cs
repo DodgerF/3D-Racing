@@ -45,14 +45,14 @@ public class WheelAxle
     {
         if (!_isSteer) return;
 
-        //Ackermann angle
+        //Ackerman's angle
         float radius = Mathf.Abs(wheelBaseLength * Mathf.Tan(Mathf.Deg2Rad * (90 - Mathf.Abs(steerAngle))));
         float angleSing = Mathf.Sign(steerAngle);
 
         if(steerAngle > 0)
         {
-            _leftWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius + _wheelWidth * 0.5f)) * angleSing;
-            _rightWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius - _wheelWidth * 0.5f)) * angleSing;
+            _leftWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius + (_wheelWidth * 0.5f))) * angleSing;
+            _rightWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius - (_wheelWidth * 0.5f))) * angleSing;
         }
         else if (steerAngle < 0)
         {
