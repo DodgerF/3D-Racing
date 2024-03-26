@@ -27,6 +27,10 @@ public class WheelAxle
 
     private WheelHit _leftWheelHit;
     private WheelHit _rightWheelHit;
+
+    public bool IsMotor => _isMotor;
+    public bool IsSteer => _isSteer;
+
     #endregion
 
     #region Public API
