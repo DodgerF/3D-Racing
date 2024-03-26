@@ -977,35 +977,36 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 4000
-      inSlope: -18.512875
-      outSlope: -18.512875
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 54.437004
-      value: 2992.2146
-      inSlope: 1.4741244
-      outSlope: 1.4741244
+      value: 1
+      inSlope: -0.11178047
+      outSlope: -0.11178047
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.07982798
+      inWeight: 0
+      outWeight: 0.42185712
     - serializedVersion: 3
-      time: 200
-      value: 100
-      inSlope: -19.869162
-      outSlope: -19.869162
-      tangentMode: 34
+      time: 0.13531509
+      value: 0.6119188
+      inSlope: -0.14294259
+      outSlope: -0.14294259
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.39507276
+      outWeight: 0.07487514
+    - serializedVersion: 3
+      time: 1
+      value: 0.10238266
+      inSlope: -0.52940255
+      outSlope: -0.52940255
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06720382
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _maxSpeed: 150
+  _maxMotorTorque: 8000
+  _maxSpeed: 180
   linearVelocity: 0
   throttleControl: 0
   steerControl: 0
