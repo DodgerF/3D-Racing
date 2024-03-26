@@ -920,7 +920,7 @@ Transform:
   m_GameObject: {fileID: 1219870500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 14.3, z: 2.38}
+  m_LocalPosition: {x: 2.7, y: 15, z: 2.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -970,9 +970,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688b61583a78ee441a7d5abccc070d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxMotorTorque: 1500
   _maxSteerAngle: 15
   _maxBrakeTorque: 5000
+  _engineTorqueCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 4000
+      inSlope: -18.512875
+      outSlope: -18.512875
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 54.437004
+      value: 2992.2146
+      inSlope: 1.4741244
+      outSlope: 1.4741244
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.07982798
+    - serializedVersion: 3
+      time: 200
+      value: 100
+      inSlope: -19.869162
+      outSlope: -19.869162
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _maxSpeed: 150
+  linearVelocity: 0
   throttleControl: 0
   steerControl: 0
   brakeControl: 0
