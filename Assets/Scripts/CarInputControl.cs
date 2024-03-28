@@ -20,7 +20,7 @@ public class CarInputControl : MonoBehaviour
         UpdateAxis();
         UpdateTorqueAndBrake();
         UpdateSteer();
-        //UpdateAutoBreak();
+        UpdateAutoBreak();
     }
 
     private void UpdateSteer()

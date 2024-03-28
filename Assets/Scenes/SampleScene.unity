@@ -166,7 +166,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.44
   m_SuspensionSpring:
-    spring: 10000
+    spring: 8000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -330,11 +330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84bd06802f0913e479d4f902d3622191, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84bd06802f0913e479d4f902d3622191, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84bd06802f0913e479d4f902d3622191, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -607,7 +607,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.44
   m_SuspensionSpring:
-    spring: 10000
+    spring: 8000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -772,7 +772,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.44
   m_SuspensionSpring:
-    spring: 10000
+    spring: 8000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -920,7 +920,7 @@ Transform:
   m_GameObject: {fileID: 1219870500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7, y: 15, z: 2.38}
+  m_LocalPosition: {x: 0.1, y: 15.9, z: 2.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -985,8 +985,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.42185712
     - serializedVersion: 3
-      time: 0.13531509
-      value: 0.6119188
+      time: 0.20077527
+      value: 0.44077623
       inSlope: -0.14294259
       outSlope: -0.14294259
       tangentMode: 0
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _maxMotorTorque: 8000
-  _maxSpeed: 180
+  _maxSpeed: 150
   linearVelocity: 0
   throttleControl: 0
   steerControl: 0
@@ -1031,12 +1031,12 @@ MonoBehaviour:
     _isMotor: 1
     _isSteer: 1
     _wheelWidth: 2.38
-    _antiRollForce: 15000
+    _antiRollForce: 10000
     _additionalWheelDownForce: 20
-    _baseForwardStiffnes: 1.5
-    _stabilittyForwardFactor: 2
+    _baseForwardStiffnes: 0.8
+    _stabilittyForwardFactor: 1
     _baseSidewaysStiffnes: 3
-    _stabilittySidewaysFactor: 4
+    _stabilittySidewaysFactor: 2
   - _leftWheelCollider: {fileID: 644302728}
     _rightWheelCollider: {fileID: 165269386}
     _leftWheelMesh: {fileID: 530553965}
@@ -1044,15 +1044,15 @@ MonoBehaviour:
     _isMotor: 1
     _isSteer: 0
     _wheelWidth: 2.38
-    _antiRollForce: 15000
+    _antiRollForce: 10000
     _additionalWheelDownForce: 20
-    _baseForwardStiffnes: 1.5
-    _stabilittyForwardFactor: 2
-    _baseSidewaysStiffnes: 3
-    _stabilittySidewaysFactor: 4
+    _baseForwardStiffnes: 0.1
+    _stabilittyForwardFactor: 0.2
+    _baseSidewaysStiffnes: 6
+    _stabilittySidewaysFactor: 1
   _wheelBaseLength: 2.65
   _centerOfMass: {fileID: 1457406801}
-  _downForceMin: 50
+  _downForceMin: 10
   _downForceMax: 200
   _downForceFactor: 0.1
   _angularDragMin: 0.3
@@ -1104,7 +1104,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.44
   m_SuspensionSpring:
-    spring: 10000
+    spring: 8000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -1157,7 +1157,7 @@ Transform:
   m_GameObject: {fileID: 1457406800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0.41}
+  m_LocalPosition: {x: 0, y: -0.43, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1193,6 +1193,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 1219870503}
+  _brakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.057391208
+      outSlope: -0.057391208
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10429845
+    - serializedVersion: 3
+      time: 0.36855936
+      value: 0.7371081
+      inSlope: -0.43875155
+      outSlope: -0.43875155
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08148914
+      outWeight: 0.21218416
+    - serializedVersion: 3
+      time: 1
+      value: 0.4960327
+      inSlope: -0.38178632
+      outSlope: -0.38178632
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _steerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.9984093
+      inSlope: 0.061433144
+      outSlope: 0.061433144
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.27631024
+    - serializedVersion: 3
+      time: 0.12139273
+      value: 0.9128612
+      inSlope: -0.031310774
+      outSlope: -0.031310774
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.104613625
+    - serializedVersion: 3
+      time: 0.59887266
+      value: 0.8886466
+      inSlope: -0.064968325
+      outSlope: -0.064968325
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06987114
+      outWeight: 0.3284361
+    - serializedVersion: 3
+      time: 1.0000181
+      value: 0.6726933
+      inSlope: -0.2691426
+      outSlope: -0.2691426
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12850772
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _autoBrakeStrength: 0.05
 --- !u!4 &1883223259
 Transform:
   m_ObjectHideFlags: 0
@@ -1259,8 +1335,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5995941, y: 0.7053241, z: 3.7456384}
-  m_Center: {x: -0.0011901855, y: 0.11857185, z: -0.018162012}
+  m_Size: {x: 1.6658821, y: 1.0491028, z: 3.888457}
+  m_Center: {x: -0.034334183, y: 0.10971975, z: 0.017614007}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
