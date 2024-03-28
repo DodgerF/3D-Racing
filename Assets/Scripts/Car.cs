@@ -10,6 +10,10 @@ public class Car : MonoBehaviour
     [SerializeField] private float _maxMotorTorque;
     [SerializeField] private float _maxSpeed;
 
+    public float LinearVelocity => _chassis.LinearVelocity;
+    public float WheelSpeed => _chassis.GetWheelSpeed();
+    public float MaxSpeed => _maxSpeed;
+
     private CarChassis _chassis;
     
     [Header("Debug Only")]
@@ -25,8 +29,8 @@ public class Car : MonoBehaviour
 
     private void Update()
     {
-        linearVelocity = _chassis.LinearVelocity;
-        float engineTorque = _engineTorqueCurve.Evaluate(_chassis.LinearVelocity / _maxSpeed) * _maxMotorTorque;
+        linearVelocity = LinearVelocity;
+        float engineTorque = _engineTorqueCurve.Evaluate(LinearVelocity / _maxSpeed) * _maxMotorTorque;
 
         if (_chassis.LinearVelocity >= _maxSpeed)
         {

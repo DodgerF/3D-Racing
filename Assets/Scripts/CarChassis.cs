@@ -1,4 +1,5 @@
 using System;
+using Unity.Properties;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -46,6 +47,23 @@ public class CarChassis : MonoBehaviour
         UpdateDownForce();
 
         UpdateWheelAxles();
+    }
+
+    public float GetAvarageRpm()
+    {
+        float sum = 0;
+
+        for (int i =0; i < _wheelAxles.Length; i++)
+        {
+            sum += _wheelAxles[i].GetAvarageRpm();
+        }
+
+        return sum / _wheelAxles.Length;
+    }
+
+    public float GetWheelSpeed()
+    {
+        return GetAvarageRpm() * _wheelAxles[0].GetRadius() * 2 * 0.1885f; //2piR * 3.6f
     }
 
     private void UpdateAngularDrag()

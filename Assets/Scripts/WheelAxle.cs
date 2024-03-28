@@ -85,6 +85,16 @@ public class WheelAxle
         _leftWheelCollider.brakeTorque = brakeTorque;
         _rightWheelCollider.brakeTorque = brakeTorque;
     }
+
+    public float GetAvarageRpm()
+    {
+        return (_leftWheelCollider.rpm + _rightWheelCollider.rpm) * 0.5f;
+    }
+
+    public float GetRadius()
+    {
+        return _leftWheelCollider.radius;
+    }
     #endregion
 
     #region Private Methods
