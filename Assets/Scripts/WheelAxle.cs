@@ -27,6 +27,10 @@ public class WheelAxle
 
     private WheelHit _leftWheelHit;
     private WheelHit _rightWheelHit;
+
+    public bool IsMotor => _isMotor;
+    public bool IsSteer => _isSteer;
+
     #endregion
 
     #region Public API
@@ -80,6 +84,16 @@ public class WheelAxle
     {
         _leftWheelCollider.brakeTorque = brakeTorque;
         _rightWheelCollider.brakeTorque = brakeTorque;
+    }
+
+    public float GetAvarageRpm()
+    {
+        return (_leftWheelCollider.rpm + _rightWheelCollider.rpm) * 0.5f;
+    }
+
+    public float GetRadius()
+    {
+        return _leftWheelCollider.radius;
     }
     #endregion
 
