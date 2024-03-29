@@ -977,7 +977,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: -0.11178047
       outSlope: -0.11178047
       tangentMode: 0
@@ -985,17 +985,35 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.42185712
     - serializedVersion: 3
-      time: 0.20077527
-      value: 0.44077623
-      inSlope: -0.14294259
-      outSlope: -0.14294259
+      time: 0.13999328
+      value: 0.6743988
+      inSlope: -0.12103699
+      outSlope: -0.12103699
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.39507276
-      outWeight: 0.07487514
+      inWeight: 0.33333334
+      outWeight: 0.74377114
+    - serializedVersion: 3
+      time: 0.21089411
+      value: 1.0007062
+      inSlope: 0.034955915
+      outSlope: 0.034955915
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1752873
+    - serializedVersion: 3
+      time: 0.55673236
+      value: 1.0005057
+      inSlope: 0.008809826
+      outSlope: 0.008809826
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18104237
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.10238266
+      value: 0.049609378
       inSlope: -0.52940255
       outSlope: -0.52940255
       tangentMode: 0
@@ -1005,12 +1023,28 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _maxMotorTorque: 8000
+  _engineMaxTorque: 1350
+  _engineMinRpm: 800
+  _engineMaxRpm: 10000
+  _upShiftEngineRpm: 7000
+  _downShigftEngineRpm: 5000
+  _gears:
+  - 3.77
+  - 2.6
+  - 1.6
+  - 1
+  - 0.7
+  _finalDriveRatio: 4.7
   _maxSpeed: 150
   linearVelocity: 0
   throttleControl: 0
   steerControl: 0
   brakeControl: 0
+  engineTorque: 0
+  _engineRpm: 0
+  _selectedGear: 3.77
+  _rearGear: -3.77
+  _selectedGearIndex: 0
 --- !u!114 &1219870504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,7 +1226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2bcdb5e79db434ab1c7f729581f855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 1219870503}
+  _car: {fileID: 1219870503}
   _brakeCurve:
     serializedVersion: 2
     m_Curve:
