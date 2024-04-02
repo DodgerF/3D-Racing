@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CarChassis))]
 public class Car : MonoBehaviour
 {
+    public event UnityAction<string> gearChanged;
+
     [SerializeField] private float _maxSteerAngle;
     [SerializeField] private float _maxBrakeTorque;
 
@@ -26,7 +29,8 @@ public class Car : MonoBehaviour
     public float LinearVelocity => _chassis.LinearVelocity;
     public float WheelSpeed => _chassis.GetWheelSpeed();
     public float MaxSpeed => _maxSpeed;
-
+    public float EngineRpm => _engineRpm;
+    public float EngineMaxRpm => _engineMaxRpm;
     private CarChassis _chassis;
     
     [Header("Debug Only")]
@@ -74,6 +78,15 @@ public class Car : MonoBehaviour
 
 
 #region GearBox
+
+    public string GetSelectedGearName()
+    {
+        if (_selectedGear == _rearGear) return "R";
+
+        if (_selectedGear == 0) return "N";
+
+        return (_selectedGearIndex + 1).ToString();
+    }
     private void AutoGearShift()
     {
         if(_selectedGear < 0) return;
@@ -98,6 +111,7 @@ public class Car : MonoBehaviour
     public void ShiftToReverseGear()
     {
         _selectedGear = _rearGear;
+        gearChanged?.Invoke(GetSelectedGearName());
     }
     public void ShiftToFirstGear()
     {
@@ -106,6 +120,7 @@ public class Car : MonoBehaviour
     public void ShiftToNetral()
     {
         _selectedGear = 0;
+        gearChanged?.Invoke(GetSelectedGearName());
     }
 #endregion
     private void ShiftGear(int gearIndex)
@@ -113,5 +128,6 @@ public class Car : MonoBehaviour
         gearIndex = Mathf.Clamp(gearIndex, 0, _gears.Length - 1);
         _selectedGear = _gears[gearIndex];
         _selectedGearIndex = gearIndex;
+        gearChanged?.Invoke(GetSelectedGearName());
     }
 }
